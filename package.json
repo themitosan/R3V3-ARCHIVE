@@ -1,0 +1,30 @@
+{
+    "name": "R3V3",
+    "author": "R3",
+    "version": "0.0.1",
+    "license": "GPL-2",
+    "main": "App/index.htm",
+    "repository": "about:blank",
+    "description": "This is the third version of the best software for Resident Evil 3 modding",
+    "window": {
+        "width": 1280,
+        "height": 700,
+        "frame": true,
+        "title": "R3V3",
+        "toolbar": true,
+        "min_width": 1280,
+        "min_height": 700,
+        "fullscreen": false,
+        "position": "center",
+        "theme-color": "#000",
+        "icon": "App/img/logo.png"
+    },
+    "dependencies": {
+        "nw": "0.61.0-sdk",
+        "memoryjs": "^3.2.3",
+        "discord-rpc": "^3.1.3"
+    },
+    "webkit": {
+        "plugin": true
+    }
+}
