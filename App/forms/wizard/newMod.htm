@@ -1,0 +1,114 @@
+<!-- CSS -->
+
+<style type="text/css">
+	.R3V3_WIZARD_MAIN_FORM {
+		padding: 6px;
+		overflow: auto;
+		width: calc(100% - 12px);
+		height: calc(100% - 12px);
+		background-size: auto 80%;
+		text-align: -webkit-center;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-image: url('img/logoWm.png');
+	}
+	.MOD_OPTIONS {
+		border-radius: 6px;
+		background-color: #111c;
+		width: calc(100% - 30px);
+		text-align: -webkit-left;
+		margin: 20px 0px 10px 0px;
+		padding: 6px 6px 10px 6px;
+		box-shadow: 0px 0px 6px #000;
+	}
+	.R3V3_MOD_NAME {
+		color: #0f0;
+    	border: none;
+    	padding: 5px;
+    	outline: none;
+    	min-width: 370px;
+    	font-family: monospace;
+		margin: 4px 0px 6px 0px;
+    	background-color: #0000;
+    	text-align: -webkit-center;
+		text-shadow: 0px 0px 3px #00ff004a;
+    	background-image: linear-gradient(90deg, #0000, #000, #0000);
+	}
+	.R3V3_WIZARD_BG {
+		background-image: linear-gradient(0deg, #3e3c53, #1f1e2a);
+	}
+	.R3V3_WIZARD_SETTINGS {
+		font-size: 18px;
+		margin-top: -6px;
+		font-weight: 500;
+		font-family: system-ui;
+		text-align: -webkit-center;
+	}
+	.R3V3_WIZARD_selectButtonFix {
+		min-width: 200px;
+	}
+	.R3V3_WIZARD_svgGame {
+    	top: 102px;
+    	right: 84px;
+		position: absolute;
+	}
+	.R3V3_WIZARD_svgPath {
+		top: 129px;
+		right: 84px;
+		position: absolute;
+	}
+</style>
+
+<!-- New mod form (Wizard) -->
+
+<div class="R3V3_WIZARD_MAIN_FORM">
+	This is R3V3 Wizard - an assistant that will unpack all game assets, generating a new version of the game built for modding and testing.
+	All files will be installed on a specific path that you will select below.<br><br>
+	To start, please select your main game location.<br>
+
+	<!-- Game Path -->
+	<input type="button" value="Select main game executable" onclick="R3.wizard.getPath(0);" class="R3_BTN R3V3_WIZARD_selectButtonFix">
+	<img src="img/svg/status-err.svg" class="R3V3_SVG_status_ERR R3V3_WIZARD_svgGame" id="R3V3_WIZARD_svg_execName" alt="svg_status_execName"><br>
+
+	<!-- Mod Path -->
+	<input type="button" value="Select mod location" onclick="R3.wizard.getPath(1);" class="R3_BTN R3V3_WIZARD_selectButtonFix">
+	<img src="img/svg/status-err.svg" class="R3V3_SVG_status_ERR R3V3_WIZARD_svgPath" id="R3V3_WIZARD_svg_modPath" alt="svg_status_Path"><br>
+
+	<!-- Options -->
+	<div class="MOD_OPTIONS">
+
+		<div class="R3V3_WIZARD_SETTINGS">Wizard Settings</div>
+
+		<!-- Keep Rofs11.dat -->
+		<input checked="true" type="checkbox" id="R3_wizard_keepRofs11">
+		<font class="cursor-pointer" onclick="R3.design.tools.toggleCheckbox('R3_wizard_keepRofs11');" title="Set this option on to keep Rofs11.dat inside extracted folder to avoid errors while gameplay.">
+			- Keep <font class="font-code">Rofs11.dat</font>
+		</font><br>
+
+		<!-- Enable SCD DoorLink™ -->
+		<input checked="true" type="checkbox" id="R3_wizard_enableDoorLink">
+		<font class="cursor-pointer" onclick="R3.design.tools.toggleCheckbox('R3_wizard_enableDoorLink');" title="Set this option enabled to run SCD DoorLink™ process after game extraction">
+			- Enable SCD DoorLink™ [WIP]
+		</font><br>
+
+		<!-- Autofill Settings paths -->
+		<input checked="true" type="checkbox" id="R3_wizard_autoFillPaths">
+		<font class="cursor-pointer" onclick="R3.design.tools.toggleCheckbox('R3_wizard_autoFillPaths');" title="Set this option enabled to set main game paths on R3V3 settings.">
+			- Autofill Settings paths
+		</font><br>
+
+		<!-- Replace warning message on mod -->
+		<input checked="true" type="checkbox" id="R3_wizard_replaceWarn">
+		<font class="cursor-pointer" onclick="R3.design.tools.toggleCheckbox('R3_wizard_replaceWarn');" title="This will replace the original boot warning with a custom R3 image.">
+			- Replace first warning message
+		</font><br>
+
+	</div>
+
+	Please, insert your mod name below:<br>
+	<input type="text" placeholder="Insert mod name here" class="R3V3_MOD_NAME" id="R3V3_MOD_NAME" onkeypress="R3.wizard.modNameKP(event);"><br>
+
+	<!-- Start Wizard -->
+	<input type="button" value="Create Mod" onclick="R3.wizard.checkVars();" class="R3_BTN_SAVE">
+
+</div>

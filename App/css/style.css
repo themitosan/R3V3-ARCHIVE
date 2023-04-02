@@ -1,0 +1,596 @@
+/*
+    *******************************************************************************
+    R3ditor V2 - style.css
+    By TheMitoSan
+
+    R3V3 General CSS Styles
+    *******************************************************************************
+*/
+/*
+    Scroll tags
+*/
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 4px;
+    margin: 6px 0px 6px 0px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: #e7e7e7;
+}
+::-webkit-scrollbar-thumb:hover {
+    border-radius: 4px;
+    background: #f0f0f0;
+}
+::-webkit-scrollbar-thumb:active {
+    background: #fff;
+    border-radius: 4px;
+}
+/*
+    Fonts
+*/
+@font-face {
+    font-style: normal;
+    font-display: swap;
+    font-weight: normal;
+    font-family: 'monospace';
+    src: url('Consolas.woff2') format('woff2'),
+        url('Consolas.woff') format('woff');
+}
+
+/*
+    HTML Tags
+*/
+html {
+    scroll-behavior: smooth;
+}
+body {
+    color: #fff;
+    overflow: hidden;
+    user-select: none;
+    scrollbar-width: thin;
+    background-color: #000;
+    animation-duration: 0s;
+    -webkit-user-select: none;
+    scrollbar-color: #666 #333;
+    text-shadow: 1px 1px 2px #000;
+}
+a {
+    color: #fff;
+    cursor: pointer;
+    text-decoration: underline;
+}
+a:visited {
+    color: #fff;
+    text-decoration: underline;
+}
+input {
+    text-rendering: auto;
+    font: 400 13.3333px Arial;
+}
+img {
+    -webkit-user-drag: none;
+}
+li {
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+input[type='checkbox' i] {
+    top: 2px;
+    cursor: pointer;
+    position: relative;
+}
+input[type='range'] {
+    top: 4px;
+    outline: none;
+    cursor: col-resize;
+    position: relative;
+    margin-bottom: 8px;
+}
+input[type='button'] {
+    outline: none;
+    cursor: pointer;
+}
+input[type="button" i]:disabled {
+    opacity: 0.4;
+    background-color: #6c63d9;
+}
+textarea {
+    resize: none;
+    outline: none;
+}
+blockquote {
+    display: none;
+}
+
+/*
+    Animations
+*/
+@keyframes hueMadness {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    50% {
+        filter: hue-rotate(180deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+/*
+    Top Frame
+*/
+.R3_APP_HOLDER {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+/*
+    Main Menu
+*/
+.R3V3_WIZARD_SETUP {
+    display: none;
+}
+.R3_MENU_mainMenu {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.R3V3_mainAppIcon {
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    width: 14%;
+    z-index: 1;
+    bottom: 0px;
+    margin: auto;
+    position: absolute;
+    animation: hueMadness 60s infinite;
+}
+.R3V3_mainMenu_frame {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 10;
+    height: 100%;
+    opacity: 0.76;
+    position: absolute;
+}
+.R3V3_mainMenu_bg {
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(6px) grayscale(0.6);
+}
+.R3V3_FRAME {
+    left: -6%;
+    width: 112%;
+    height: 14%;
+    z-index: 10;
+    position: absolute;
+    filter: blur(20px);
+    background-color: #000;
+}
+.frameTop {
+    top: -6%;
+}
+.frameBottom {
+    bottom: -6%;
+}
+
+/*
+    Mini Window API
+*/
+.R3V3_MINI_WINDOW {
+    z-index: 100;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 6px;
+    font-family: monospace;
+    background-color: #424242;
+    box-shadow: 0px 0px 10px 4px #00000057;
+}
+.R3V3_MINI_WINDOW_DRAG_AREA {
+    z-index: 100;
+    position: sticky;
+    cursor: all-scroll;
+    padding: 4px 2px 6px 8px;
+    text-align: -webkit-center;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    text-shadow: 1px 1px 2px #000a;
+    background-image: linear-gradient(90deg, #5b2af0, #6f6fd4);
+}
+.R3V3_miniWindow_controlHolder {
+    top: 4px;
+    right: 4px;
+    position: absolute;
+    text-align: -webkit-right;
+}
+.R3V3_MINI_WINDOW_CLOSE_BTN {
+    color: #000;
+    border: none;
+    width: 20.91px;
+    border-radius: 4px;
+    background-size: auto;
+    margin: 0px 1px 0px 1px;
+    transition-duration: 0.2s;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../img/svg/icon-cls.svg');
+}
+.R3V3_MINI_WINDOW_CLOSE_BTN:hover {
+    filter: invert(1);
+    background-color: #20ffff;
+    box-shadow: 0px 0px 2px #9c9c9c;
+}
+.R3V3_MINI_WINDOW_CLOSE_BTN:active {
+    filter: invert(1);
+    background-color: #00ffff;
+}
+.R3V3_MINI_WINDOW_MAX_BTN {
+    color: #000;
+    border: none;
+    width: 20.91px;
+    border-radius: 4px;
+    background-size: auto;
+    margin: 0px 1px 0px 1px;
+    transition-duration: 0.2s;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../img/svg/icon-max.svg');
+}
+.R3V3_MINI_WINDOW_MAX_BTN:hover {
+    transition: 0.4s;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px #5b2aef17;
+}
+.R3V3_MINI_WINDOW_MIN_BTN {
+    color: #000;
+    border: none;
+    width: 20.91px;
+    border-radius: 4px;
+    background-size: auto;
+    margin: 0px 1px 0px 1px;
+    transition-duration: 0.2s;
+    background-position-y: -2px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-image: url('../img/svg/icon-min.svg');
+}
+.R3V3_MINI_WINDOW_MIN_BTN:hover {
+    transition: 0.4s;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px #5b2aef17;
+}
+.R3V3_MINI_WINDOW_RES_BTN {
+    transform: scaleY(1);
+    color: #000;
+    border: none;
+    display: none;
+    width: 20.91px;
+    border-radius: 4px;
+    margin: 0px 1px 0px 1px;
+    transition-duration: 0.2s;
+    background-size: auto 9.3px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../img/svg/icon-res.svg');
+}
+.R3V3_MINI_WINDOW_RES_BTN:hover {
+    transition: 0.4s;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px #5b2aef17;
+}
+.R3V3_MINI_WINDOW_HOLDER {
+    width: 100%;
+    position: absolute;
+    height: calc(100% - 25px);
+}
+
+/*
+    Icon bar
+*/
+.R3V3_iconBar_holder {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    color: #fff;
+    height: 36px;
+    padding: 0px;
+    overflow: hidden;
+    position: absolute;
+    display: inline-flex;
+    align-content: center;
+    background-color: #0000;
+    background-image: linear-gradient(180deg, #646464, #767676);
+}
+.R3V3_iconBar_button {
+    color: #fff;
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
+    border-color: #ddd;
+    background-color: #ddd;
+    margin: 0px 1px 0px 1px;
+    padding: 0px 0px 0px 0px;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 2px 2px 2px #0004;
+}
+.R3V3_iconBar_separator {
+    width: fit-content;
+    display: inline-flex;
+    margin: 0px 15px 0px 15px;
+}
+.iconBar_newFile {
+    background-image: url('../img/icons/icon-new.webp');
+}
+.iconBar_open {
+    background-image: url('../img/icons/icon-open.webp');
+}
+.iconBar_save {
+    background-image: url('../img/icons/icon-save.webp');
+}
+.iconBar_saveAs {
+    margin: 0px 15px 0px 2px;
+    background-image: url('../img/icons/icon-save-as.webp');
+}
+.iconBar_compile {
+    width: 74px;
+    margin: 0px 20px 0px 20px;
+    background-image: url('../img/icons/icon-compile.webp');
+}
+.iconBar_add {
+    background-image: url('../img/icons/icon-add.webp');
+}
+.iconBar_remove {
+    background-image: url('../img/icons/icon-rem.webp');
+}
+.iconBar_previous {
+    background-image: url('../img/icons/icon-prev.webp');
+}
+.iconBar_next {
+    background-image: url('../img/icons/icon-next.webp');
+}
+.iconBar_openInHex {
+    background-image: url('../img/icons/icon-openHex.webp');
+}
+.iconBar_hexText {
+    background-image: url('../img/icons/icon-hexText.webp');
+}
+.iconBar_hex {
+    background-image: url('../img/icons/icon-hex.webp');
+}
+
+/*
+    Progress Bar
+*/
+.R3V3_progressBar_outer{
+    height: 10px;
+    padding: 0px;
+    overflow: hidden;
+    border-radius: 10px;
+    width: calc(100% - 8px);
+    margin: 6px 0px 4px 0px;
+    background-color: #0008;
+    text-align: -webkit-left;
+}
+.R3V3_progressBar_inner{
+    width: 0px;
+    color: #fff;
+    height: 10px;
+    background-color: #0f0;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    transition: 0.4s cubic-bezier(0,1,0,1);
+    background-image: linear-gradient(to right, #0a0, #0f0);
+}
+
+/*
+    Tab System
+*/
+.R3_tabHolder {
+    height: 23px;
+    margin-top: 1px;
+    overflow: hidden;
+    width: calc(100% - 2px);
+    padding: 2px 0px 0px 2px;
+    background-image: linear-gradient(0deg, #4a4a4a, #3e3e3e);
+}
+.R3_tabButton {
+    border: none;
+    outline: none;
+    color: #9d9d9d;
+    cursor: pointer;
+    min-width: 70px;
+    margin: 0px -4px 0px 0px;
+    padding: 4px 6px 4px 6px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    box-shadow: inset 0px 0px 6px #0006;
+    background-image: linear-gradient(180deg, #262626, #2e2e2e);
+}
+.R3_tabForm {
+    padding: 6px;
+    display: none;
+    z-index: 100;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    background-image: linear-gradient(180deg, #626262, #424242);
+    position: absolute;
+}
+.tabActive {
+    color: #fff;
+    box-shadow: none;
+    text-shadow: 0px 0px 6px #000a;
+    background-image: linear-gradient(0deg, #626262, #777, #949494);
+}
+.formActive {
+    display: block !important;
+}
+
+/*
+    Editors
+*/
+.R3V3_editorHolder {
+    top: 36px;
+    left: 0px;
+    width: 100%;
+    position: absolute;
+    background-color: #0002;
+    height: calc(100% - 36px);
+    background-size: auto 72%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../img/logoWm.png');
+}
+
+/*
+    Img and SVG
+*/
+.R3V3_SVG_status_OK {
+    width: 18px;
+    height: 17px;
+    margin: 0px 2px -4px -2px;
+}
+.R3V3_SVG_status_ERR {
+    width: 14px;
+    height: 20px;
+    margin: -2px 4px -6px 0px;
+}
+
+/*
+    Buttons
+*/
+.R3_BTN_SAVE {
+    border: none;
+    min-width: 154px;
+    border-radius: 4px;
+    color: #fff !important;
+    padding: 6px 34px 6px 34px;
+    box-shadow: 0px 0px 4px #2c2c2c;
+    background-image: linear-gradient(180deg, #36b900, #065e00);
+}
+.R3_BTN_SAVE:active {
+    background-image: linear-gradient(0deg, #36b900, #065e00);
+}
+.R3_BTN {
+    border: none;
+    border-radius: 4px;
+    margin: 4px 2px 4px 2px;
+    padding: 2px 10px 2px 10px;
+    background-image: linear-gradient(180deg, #fff, #ccc);
+}
+.R3_BTN:active {
+    background-image: linear-gradient(0deg, #fff, #ccc);
+}
+.R3_BTN_settingsFile {
+    left: 100%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 2px;
+    position: sticky;
+    font-style: italic;
+    border-radius: 4px;
+    padding: 2px 10px 2px 10px;
+    text-shadow: 0px 0px 4px #0000000f;
+    background-image: linear-gradient(180deg, #fff, #aaa);
+}
+.R3_BTN_settingsFile:active {
+    background-image: linear-gradient(0deg, #fff, #aaa);
+}
+
+/*
+    Cursor
+*/
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/*
+    Separators
+*/
+.separator_0 {
+    height: 2px;
+    margin-top: 8px;
+    width: calc(90%);
+    margin-bottom: 4px;
+    border-radius: 4px;
+    background-image: linear-gradient(to right, #fff, #0000);
+}
+
+/*
+    Colors
+*/
+.color-white {
+    color: #fff;
+}
+.color-green {
+    color: #0f0;
+}
+
+/*
+    Fonts
+*/
+.font-sticky {
+    position: sticky !important;
+}
+code, .font-code {
+    color: #aefff4;
+    user-select: all;
+    border-radius: 4px;
+    background-color: #000;
+    padding: 2px 6px 2px 6px;
+    font-family: monospace !important;
+}
+.font-monospace {
+    font-family: monospace !important;
+}
+.font-italic {
+    font-style: italic !important;
+}
+.font-title {
+    font-size: 16px;
+    font-family: system-ui;
+    margin: 4px 0px 4px 0px;
+}
+
+/*
+    Alingn
+*/
+.align-center {
+    text-align: -webkit-center !important;
+}
+
+/*
+    Misc
+*/
+.R3_settingsForm {
+    height: calc(100% - 72px);
+}
+.none {
+    display: none !important;
+}
+.position-initial {
+    position: initial !important;
+}
+.can-select {
+    user-select: all !important;
+    -webkit-user-select: all !important;
+}

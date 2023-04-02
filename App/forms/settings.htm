@@ -1,0 +1,179 @@
+<!-- CSS -->
+
+<style type="text/css">
+	.R3_settingsOptions {
+		padding: 6px;
+		overflow: auto;
+		border-radius: 6px;
+		width: calc(100% - 12px);
+		height: calc(100% - 12px);
+		background-color: #131313cc;
+	}
+	.R3_settingsForm_livestatusUpdateFrenquency {
+		width: 80%;
+	}
+	.R3V3_saveSettings {
+		bottom: 6px;
+		width: 100%;
+		position: absolute;
+		text-align: -webkit-center;
+	}
+</style>
+
+<!-- R3V3 Settings -->
+<div id="tabList_settings" class="R3_tabHolder">
+	<input type="button" value="General" id="tabList_settings_tab_0" class="R3_tabButton tabActive" onclick="R3.design.tabs.setActive('tabList_settings', 0);">
+	<input type="button" value="Paths" id="tabList_settings_tab_1" class="R3_tabButton" onclick="R3.design.tabs.setActive('tabList_settings', 1);">
+	<input type="button" value="RE3 Livestatus" id="tabList_settings_tab_2" class="R3_tabButton" onclick="R3.design.tabs.setActive('tabList_settings', 2);">
+	<input type="button" value="Window" id="tabList_settings_tab_3" class="R3_tabButton" onclick="R3.design.tabs.setActive('tabList_settings', 3);">
+	<input type="button" value="MSG Editor" id="tabList_settings_tab_4" class="R3_tabButton" onclick="R3.design.tabs.setActive('tabList_settings', 4);">
+	<input type="button" value="Misc" id="tabList_settings_tab_5" class="R3_tabButton" onclick="R3.design.tabs.setActive('tabList_settings', 5);">
+</div>
+
+<!-- Forms -->
+
+<!-- General -->
+<div id="tabList_settings_form_0" class="R3_settingsForm R3_tabForm formActive">
+	<div class="R3_settingsOptions">
+
+		<!-- Open log at startup -->
+		<input type="checkbox" id="R3_settings_openLogStartup">
+		<font class="cursor-pointer" onclick="R3.design.tools.toggleCheckbox('R3_settings_openLogStartup');">
+			 - Open log at startup
+		</font><br>
+
+		<!-- Load last project on startup -->
+		<input type="checkbox" id="R3_settings_openLastProject">
+		<font class="cursor-pointer" onclick="R3.design.tools.toggleCheckbox('R3_settings_openLastProject');">
+			 - Load last project on startup
+		</font><br>
+
+		<!-- Check for updates on startup -->
+		<input type="checkbox" id="R3_settings_checkForUpdates">
+		<font class="cursor-pointer" onclick="R3.design.tools.toggleCheckbox('R3_settings_checkForUpdates');">
+			 - Check for updates on startup
+		</font><br>
+		
+		<div class="separator_0"></div>
+		
+		<!-- Show latest file opened on main menu -->
+		<input type="checkbox" id="R3_settings_showLatestFile">
+		<font class="cursor-pointer" onclick="R3.design.tools.toggleCheckbox('R3_settings_showLatestFile');">
+			 - Show latest file opened on main menu
+		</font><br>
+
+		<div class="separator_0"></div>
+
+		<!-- Enable Discord Rich Presence -->
+		<input type="checkbox" id="R3_settings_enableDiscord">
+		<font class="cursor-pointer" onclick="R3.design.tools.toggleCheckbox('R3_settings_enableDiscord');">
+			 - Enable Discord Rich Presence
+		</font><br>
+
+	</div>
+</div>
+
+<!-- Paths -->
+<div id="tabList_settings_form_1" class="R3_settingsForm R3_tabForm">
+	<div class="R3_settingsOptions">
+		
+		<!-- Game executables -->
+		<img id="R3_settings_status_re3Path">Main game executable 
+		<input type="button" class="R3_BTN_settingsFile" value="Select file" onclick="R3.settings.selectFile('re3Path');"><br>
+
+		<img id="R3_settings_status_mercePath">Mercenaries executable 
+		<input type="button" class="R3_BTN_settingsFile" value="Select file" onclick="R3.settings.selectFile('mercePath');">
+		<div class="separator_0"></div>
+
+		<!-- Hex editor -->
+		<img id="R3_settings_status_hexEditor_path">Hex editor 
+		<input type="button" class="R3_BTN_settingsFile" value="Select file" onclick="R3.settings.selectFile('hexEditor_path');">
+		<div class="separator_0"></div>
+
+		<!-- Leo2236 Tools -->
+		<img id="R3_settings_status_leo2236_re3plwe">RE3PLWEditor Path 
+		<input type="button" class="R3_BTN_settingsFile" value="Select file" onclick="R3.settings.selectFile('leo2236_re3plwe');"><br>
+
+		<img id="R3_settings_status_leo2236_re3slde">RE3SLDE Path 
+		<input type="button" class="R3_BTN_settingsFile" value="Select file" onclick="R3.settings.selectFile('leo2236_re3slde');"><br>
+
+		<img id="R3_settings_status_leo2236_re3mv">RE3MV Path 
+		<input type="button" class="R3_BTN_settingsFile" value="Select file" onclick="R3.settings.selectFile('leo2236_re3mv');">
+	</div>
+</div>
+
+<!-- RE3 Livestatus -->
+<div id="tabList_settings_form_2" class="R3_settingsForm R3_tabForm">
+	<div class="R3_settingsOptions">
+		
+		<!-- Enable game detection -->
+		<input type="checkbox" id="R3_settings_enableGameDetection">
+		<font class="cursor-pointer" onclick="R3.design.tools.toggleCheckbox('R3_settings_enableGameDetection');">
+			 - Enable game detection
+		</font><br>
+
+		<!-- Display player position as int instead of hex -->
+		<input type="checkbox" id="R3_settings_livestausPosHexInt">
+		<font class="cursor-pointer" onclick="R3.design.tools.toggleCheckbox('R3_settings_livestausPosHexInt');">
+			 - Display player position as <font class="font-code">int</font> instead of <font class="font-code">hex</font>
+		</font><br>
+
+		<div class="separator_0"></div>
+
+		<!-- Check for updates on startup -->
+		Livestatus renderer speed: <font id="R3_settings_livestausUpdateFrenquencyLbl">???</font>ms<br>
+		<div class="align-center">
+			40ms 
+			<input type="range" min="40" max="1000" step="10" value="80" id="R3_settings_livestausUpdateFrenquency" class="R3_settingsForm_livestatusUpdateFrenquency" oninput="R3.settings.updateRanges();">
+			1000ms
+		</div>
+		<font class="font-italic">If you have some issues with performance, set this value <u>higher</u> - since it <u>may reduce JS Heap</u>.</font>
+
+	</div>
+</div>
+
+<!-- Window -->
+<div id="tabList_settings_form_3" class="R3_settingsForm R3_tabForm">
+	<div class="R3_settingsOptions">
+		
+		<!-- Maximize on startup -->
+		<input type="checkbox" id="R3_settings_maximizeOnLoad">
+		<font class="cursor-pointer" onclick="R3.design.tools.toggleCheckbox('R3_settings_maximizeOnLoad');">
+			 - Maximize on startup
+		</font><br>
+
+	</div>
+</div>
+
+<!-- MSG Editor -->
+<div id="tabList_settings_form_4" class="R3_settingsForm R3_tabForm">
+	<div class="R3_settingsOptions">
+
+		<!-- Show functions on message preview -->
+		<input type="checkbox" id="R3_settings_msgEditor_showFunctionsOnPreview">
+		<font class="cursor-pointer" onclick="R3.design.tools.toggleCheckbox('R3_settings_msgEditor_showFunctionsOnPreview');">
+			 - Show functions on message preview
+		</font><br>
+
+		<!-- Compíle message as you type -->
+		<input type="checkbox" id="R3_settings_msgEditor_compileOnType">
+		<font class="cursor-pointer" onclick="R3.design.tools.toggleCheckbox('R3_settings_msgEditor_compileOnType');" title="This will compile current message as you type">
+			 - Compíle message while typing
+		</font><br>
+
+	</div>
+</div>
+
+<!-- Misc -->
+<div id="tabList_settings_form_5" class="R3_settingsForm R3_tabForm">
+	<div class="R3_settingsOptions">
+		<input type="button" value="Export settings" class="" onclick="R3.system.wip();">
+		<input type="button" value="Import settings" class="" onclick="R3.system.wip();">
+		<input type="button" value="Reset settings" class="" onclick="R3.settings.reset();">
+	</div>
+</div>
+
+<!-- Save button -->
+<div class="R3V3_saveSettings">
+	<input type="button" class="R3_BTN_SAVE" value="Save Settings" onclick="R3.settings.save(!0);">
+</div>

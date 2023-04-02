@@ -1,0 +1,183 @@
+<!-- CSS -->
+<style type="text/css">
+
+	.R3_tabform_fix {
+		height: calc(100% - 38px) !important;
+	}
+	.R3V3_bManager_holder {
+		padding: 6px;
+		overflow: auto;
+		border-radius: 6px;
+		width: calc(100% - 12px);
+		height: calc(100% - 12px);
+		background-color: #131313cc;
+	}
+	.R3V3_bManager_list {
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		text-align: center;
+		border-radius: 2px;
+		background-size: auto;
+		background-color: #0000;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	.R3V3_bManager_bg_RDT {
+		background-image: url('img/icons/RDT.webp');
+	}
+	.R3V3_bManager_bg_MSG {
+		background-image: url('img/icons/MSG.webp');
+	}
+	.R3V3_bManager_item {
+		height: 44px;
+		cursor: pointer;
+		min-height: 44px;
+		text-align: left;
+		border-radius: 6px;
+		width: calc(100% - 8px);
+		margin: 2px 0px 2px 0px;
+		padding: 2px 0px 6px 6px;
+		transition: 0.6s cubic-bezier(0, 1, 0, 1) 0s;
+	}
+
+	.R3V3_bManager_item_RDT {
+		background-image: linear-gradient(180deg, #910303cc, #630000cc);
+	}
+	.R3V3_bManager_item_RDT:hover {
+		background-image: linear-gradient(180deg, #910303, #630000);
+	}
+	.R3V3_bManager_item_RDT:active {
+		background-image: linear-gradient(0deg, #ba0202, #8a0c0c);
+	}
+
+	.R3V3_bManager_item_MSG {
+		background-image: linear-gradient(180deg, #313853cc, #292d41cc);
+	}
+	.R3V3_bManager_item_MSG:hover {
+	    background-image: linear-gradient(180deg, #4a5788, #262d4b);
+	}
+	.R3V3_bManager_item_MSG:active {
+	    background-image: linear-gradient(0deg, #4a5788, #262d4b);
+	}
+
+	.R3V3_bManager_details {
+		padding: 6px;
+		border-radius: 4px;
+		width: calc(100% - 12px);
+		height: calc(100% - 38px);
+	}
+	.R3V3_bManager_details_RDT {
+		background-size: auto 80%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-image: url('img/logoWm.png');
+	}
+	.R3V3_bManager_details_MSG {
+		background-size: auto 80%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-image: url('img/logoWm.png');
+	}
+	.R3V3_bManager_msgChangesPrevious {
+		overflow: auto;
+		position: absolute;
+		width: calc(50% - 30px);
+		height: calc(100% - 150px);
+	}
+	.R3V3_bManager_msgChangesNew {
+		left: 50%;
+		overflow: auto;
+		position: absolute;
+		width: calc(50% - 30px);
+		height: calc(100% - 150px);
+	}
+	.R3V3_bManager_details_changes {
+		padding: 8px;
+		overflow: auto;
+		margin-top: 6px;
+		border-radius: 6px;
+		background-color: #0007;
+		width: calc(100% - 16px);
+		height: calc(100% - 92px);
+	}
+	.R3V3_bManager_details_icon {
+		top: 16px;
+		right: 16px;
+		position: absolute;
+	}
+	.R3V3_bManager_details_actions {
+		bottom: 10px;
+		position: absolute;
+		width: calc(100% - 24px);
+		text-align: -webkit-center;
+	}
+	.R3V3_bManager_btnActions {
+		border: none;
+		min-width: 120px;
+		font-style: italic;
+		border-radius: 4px;
+		padding: 4px 20px 4px 20px;
+		background-image: linear-gradient(180deg, #fff, #ccc);
+	}
+	.R3V3_bManager_btnActions:active {
+		background-image: linear-gradient(0deg, #fff, #ccc);
+	}
+	.btnAction_remove {
+		color: #fff;
+		background-image: linear-gradient(180deg, #e50000, #850000);
+	}
+	.btnAction_remove:active {
+		background-image: linear-gradient(0deg, #e50000, #850000) !important;
+	}
+	.R3V3_bManager_itemLbl {
+		width: 80%;
+	}
+	.R3V3_bManager_item_icon {
+		float: right;
+		margin: -39px 10px 0px 0px;
+	}
+
+
+</style>
+
+<!-- R3V3 Backup Manager -->
+
+<div id="tabList_bManager" class="R3_tabHolder">
+	<input type="button" value="RDT Editor" id="tabList_bManager_tab_0" class="R3_tabButton tabActive" onclick="R3.design.tabs.setActive('tabList_bManager', 0, 'backupManager');">
+	<input type="button" value="MSG Editor" id="tabList_bManager_tab_1" class="R3_tabButton" onclick="R3.design.tabs.setActive('tabList_bManager', 1, 'backupManager');">
+</div>
+
+<!-- Tabs -->
+
+<!-- RDT Editor -->
+<div id="tabList_bManager_form_0" class="R3_tabform_fix R3_tabForm formActive">
+	
+	<!-- Holder -->
+	<div class="R3V3_bManager_holder" id="R3V3_bManager_holder_RDT">
+
+		<!-- Backup List -->
+		<div class="R3V3_bManager_list R3V3_bManager_bg_RDT" id="R3V3_bManager_list_RDT">
+			<!-- RDT Backup List goes here -->
+			<br>There's nothing to show here :/
+		</div>
+
+	</div>
+	
+</div>
+
+<!-- MSG Editor -->
+<div id="tabList_bManager_form_1" class="R3_tabform_fix R3_tabForm">
+	
+	<!-- Holder -->
+	<div class="R3V3_bManager_holder" id="R3V3_bManager_holder_MSG">
+
+		<!-- Backup List -->
+		<div class="R3V3_bManager_list R3V3_bManager_bg_MSG" id="R3V3_bManager_list_MSG">
+			<!-- MSG List goes here -->
+			<br>There's nothing to show here :/
+		</div>
+
+	</div>
+	
+</div>

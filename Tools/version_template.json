@@ -1,0 +1,29 @@
+{
+	"gameData": {
+		"isConsole":     false,
+		"searchBase":    null,
+		"gameOrigin":    "USA",
+		"gameVersion":   "Eidos US (TEMPLATE)",
+		"processName":   "ResidentEvil3.exe"
+	},
+	"cHP": 				 "0xA77160",
+	"cPlayer": 			 "0x6FA402",
+	"xPos":   			 "0xA770C8",
+	"yPos":   			 "0xA770D0",
+	"zPos":   			 "0XA770CC",
+	"rPos":   			 "0xA77102",
+	"zIndex": 			 "0XA7709D",
+	"cCam": 	   		 "0xA7708E",
+	"cStage": 	   		 "0xA7C446",
+	"cRoomNumber": 		 "0xA7C448",
+	"playerJ": {
+		"itemBoxStart":  "0xA7C604",
+		"invtLocation":  "0xA7C604",
+		"currentWeapon": "0xA7C72D"
+	},
+	"playerC": {
+		"itemBoxStart":  "0xA7C62C",
+		"invtLocation":  "0xA7C744",
+		"currentWeapon": "0xA7C86D"
+	}
+}

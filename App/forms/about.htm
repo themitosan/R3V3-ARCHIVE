@@ -1,0 +1,48 @@
+<!-- CSS -->
+
+<style type="text/css">
+	.ABOUT_BG {
+		z-index: 10;
+		padding: 4px;
+		position: absolute;
+		width: calc(100% - 8px);
+		height: calc(100% - 8px);
+		background-image: linear-gradient(180deg, #000, #382852);
+	}
+	.R3V3_ABOUT_ICON {
+		top: 0px;
+		width: 150px;
+		margin: -16px 0px -22px 0px;
+	}
+	.ABOUT_BG, .R3V3_ABOUT_ICON {
+		transition: 30s;
+	}
+	.ABOUT_BG:hover, .R3V3_ABOUT_ICON:hover {
+		filter: hue-rotate(360deg);
+	}
+	.R3V3_ABOUT_TITLE {
+		font-size: 20px;
+		font-family: system-ui;
+		text-shadow: 0px 0px 10px #0000c4;
+	}
+	.R3V3_ABOUT_TKS {
+		font-size: 10px;
+		font-style: italic;
+		text-align: -webkit-center;
+	}
+</style>
+
+<!-- About (aka. the most important form on this app!) -->
+
+<div class="ABOUT_BG">
+	<div class="align-center">
+		<img src="img/logo.webp" id="R3V3_ABOUT_ICON" class="R3V3_ABOUT_ICON"><br>
+		<font class="R3V3_ABOUT_TITLE">R3ditor V3 (aka. R3V3)</font><br>
+		Version: <font id="R3V3_ABOUT_VERSION">???</font><br><br>
+		<font class="font-italic">"Nihil Aetherno, cuncta novatur."</font>
+	</div><br>
+	<div id="R3V3_ABOUT_TKS" class="R3V3_ABOUT_TKS">
+		Many Thanks to: 
+		CT-STARS, 3lric, El rincon del Lobezno, Rene Kootstra, discordjs, Rob--, hongru, Joshua MacDonald,<br> jprichardson, Y <i>(The Artist)</i> zu, Mortican, Angus Johnson, Leo2236, Megan Grass, matteofumagalli1275, Klarth, "Shockproof" Jamo Koivisto, Diogo "Flag" Bandeira (Aka. Flag King), Khaled SA, Patrice Mandin (pmandin) and ResidentEvilArtist.
+	</div>
+</div>

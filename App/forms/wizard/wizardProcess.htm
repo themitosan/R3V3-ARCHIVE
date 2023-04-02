@@ -1,0 +1,84 @@
+<!-- CSS -->
+
+<style type="text/css">
+	.R3V3_WIZARD_BG {
+		background-image: linear-gradient(0deg, #54535c, #262628);
+	}
+	.R3V3_WIZARD_BG_COMPLETE {
+		background-image: linear-gradient(0deg, #343435, #32363c);
+	}
+	.R3V3_WIZARD_MAIN_FORM {
+		padding: 6px;
+		overflow: auto;
+		width: calc(100% - 12px);
+		height: calc(100% - 12px);
+		background-size: auto 80%;
+		text-align: -webkit-center;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-image: url('img/logoWm.png');
+	}
+	.R3V3_WIZARD_PROGRESS {
+		padding: 6px;
+		overflow: auto;
+		margin-top: 8px;
+		border-radius: 6px;
+		background-color: #222d;
+		width: calc(100% - 14px);
+		text-align: -webkit-left;
+		box-shadow: 0px 0px 4px #000;
+	}
+	.R3V3_wizardLabel {
+		left: 124px;
+	}
+	.R3V3_WIZARD_COMPLETE {
+		display: none;
+		margin-top: 6px;
+	}
+	.R3V3_WIZARD_PATH_COMPLETE {
+		margin: 4px 0px 6px 0px;
+	}
+</style>
+
+<!-- Wizard Process -->
+
+<div class="R3V3_WIZARD_MAIN_FORM">
+	<div class="align-center" id="R3V3_WIZARD_PROGRESS">
+		
+		R3V3 is now extracting all game data. Relax - this will be fast!<br>
+
+		<!-- Status -->
+		<div class="R3V3_WIZARD_PROGRESS">
+			Overall process: <font id="R3V3_wizardPercent" class="font-sticky R3V3_wizardLabel">0%</font><br>
+			Status: <font id="R3V3_wizardLabel" class="font-sticky R3V3_wizardLabel">Unknown</font><br>
+			
+			<div class="align-center">
+				
+				<!-- Progressbar 1 - General process -->
+				<div class="R3V3_progressBar_outer">
+					<div class="R3V3_progressBar_inner" id="R3V3_progressBar_wizard_1"></div>
+				</div>
+
+				<!-- Progressbar 2 - General process -->
+				<div class="R3V3_progressBar_outer">
+					<div class="R3V3_progressBar_inner" id="R3V3_progressBar_wizard_2"></div>
+				</div>
+
+			</div>	
+		</div>
+
+	</div>
+
+	<!-- Process Complete -->
+	<div class="R3V3_WIZARD_COMPLETE" id="R3V3_WIZARD_COMPLETE">
+		Process Complete - <u>Everything seems to be fine!</u><br><br>
+
+		All game assets were extracted to this path below:<br>
+		<div class="R3V3_WIZARD_PATH_COMPLETE">
+			<font id="R3V3_wizardLabel_modPath" class="font-code">???</font>
+		</div>
+
+		<!-- Close window -->
+		<input type="button" value="Close this window" onclick="R3.wizard.close();" class="R3_BTN_SAVE">
+	</div>
+</div>

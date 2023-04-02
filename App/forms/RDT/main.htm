@@ -1,0 +1,147 @@
+<!-- CSS -->
+
+<style type="text/css">
+
+	.rdtFormFix {
+		height: calc(100% - 38px);
+	}
+	.R3V3_rdtEditor_generalLbl {
+		left: 86px;
+		position: sticky;
+	}
+	.R3V3_rdtEditor_rdtIcon {
+		top: 6px;
+		right: 6px;
+		position: absolute;
+	}
+	.R3V3_rdtEditor_tempSection {
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		background-size: auto 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-image: url('./img/404.webp');
+	}
+	.R3V3_rdtEditor_firstTabBg {
+		top: 0px;
+		left: 0px;
+		position: absolute;
+		border-radius: 4px;
+		background-size: cover;
+		width: calc(100% + 2px);
+		height: calc(100% + 2px);
+		background-position: center;
+		background-repeat: no-repeat;
+		filter: saturate(0) blur(2px);
+		-webkit-mask-image: linear-gradient(130deg, #fff0, #fff2, #fff5);
+	}
+	.R3V3_rdtEditor_mainTabData {
+		top: 14px;
+		position: absolute;
+		width: calc(100% - 10px);
+	}
+
+</style>
+
+<!-- RDT Editor - GUI -->
+<div id="tabList_rdtEditor" class="R3_tabHolder">
+	<input type="button" value="General" id="tabList_rdtEditor_tab_0" onclick="R3.design.tabs.setActive('tabList_rdtEditor', 0, 'rdtEditor');" class="R3_tabButton tabActive">
+	<input type="button" value="MSG" id="tabList_rdtEditor_tab_1" onclick="R3.design.tabs.setActive('tabList_rdtEditor', 1, 'rdtEditor');" class="R3_tabButton">
+	<input type="button" value="SCD" id="tabList_rdtEditor_tab_2" onclick="R3.design.tabs.setActive('tabList_rdtEditor', 2, 'rdtEditor');" class="R3_tabButton">
+	<input type="button" value="RVD" id="tabList_rdtEditor_tab_3" onclick="R3.design.tabs.setActive('tabList_rdtEditor', 3, 'rdtEditor');" class="R3_tabButton">
+	<input type="button" value="LIT" id="tabList_rdtEditor_tab_4" onclick="R3.design.tabs.setActive('tabList_rdtEditor', 4, 'rdtEditor');" class="R3_tabButton">
+	<input type="button" value="PRI" id="tabList_rdtEditor_tab_5" onclick="R3.design.tabs.setActive('tabList_rdtEditor', 5, 'rdtEditor');" class="R3_tabButton">
+	<input type="button" value="RID" id="tabList_rdtEditor_tab_6" onclick="R3.design.tabs.setActive('tabList_rdtEditor', 6, 'rdtEditor');" class="R3_tabButton">
+	<input type="button" value="BLK" id="tabList_rdtEditor_tab_7" onclick="R3.design.tabs.setActive('tabList_rdtEditor', 7, 'rdtEditor');" class="R3_tabButton">
+	<input type="button" value="EFF" id="tabList_rdtEditor_tab_8" onclick="R3.design.tabs.setActive('tabList_rdtEditor', 8, 'rdtEditor');" class="R3_tabButton">
+	<input type="button" value="SCA" id="tabList_rdtEditor_tab_9" onclick="R3.design.tabs.setActive('tabList_rdtEditor', 9, 'rdtEditor');" class="R3_tabButton">
+	<input type="button" value="EFFSPR" id="tabList_rdtEditor_tab_10" onclick="R3.design.tabs.setActive('tabList_rdtEditor', 10, 'rdtEditor');" class="R3_tabButton">
+</div>
+
+<!-- Tabs -->
+
+<!-- General -->
+<div id="tabList_rdtEditor_form_0" class="R3_tabForm rdtFormFix formActive">
+
+	<!-- Map BG -->
+	<div class="R3V3_rdtEditor_firstTabBg" id="R3V3_rdtEditor_firstTabBg"></div>
+
+	<!-- Data Holder -->
+	<div class="R3V3_rdtEditor_mainTabData">
+
+		<!-- RDT Icon -->
+		<img src="img\icons\RDT.webp" class="R3V3_rdtEditor_rdtIcon">
+
+		<!-- Metadata -->
+		Map name: <font class="R3V3_rdtEditor_generalLbl" id="R3V3_rdtEditor_lbl_mapName">Unknown</font><br>
+		Location: <font class="R3V3_rdtEditor_generalLbl" id="R3V3_rdtEditor_lbl_mapLocation">Unknown</font><br>
+		Game Mode: <font class="R3V3_rdtEditor_generalLbl" id="R3V3_rdtEditor_lbl_gameMode">Unknown</font><br>
+		File Size: <font class="R3V3_rdtEditor_generalLbl" id="R3V3_rdtEditor_lbl_fileSize">Unknown</font><br>
+		Path: <font class="R3V3_rdtEditor_generalLbl can-select" id="R3V3_rdtEditor_lbl_filePath">Unknown</font>
+
+	</div>
+
+</div>
+
+<!-- MSG Editor -->
+<div id="tabList_rdtEditor_form_1" class="R3_tabForm rdtFormFix">
+	<div class="R3V3_rdtEditor_tempSection"></div>
+	<!-- MSG Editor Goes Here -->
+</div>
+
+<!-- SCD Editor -->
+<div id="tabList_rdtEditor_form_2" class="R3_tabForm rdtFormFix">
+	<div class="R3V3_rdtEditor_tempSection"></div>
+	<!-- SCD Editor Goes Here -->
+</div>
+
+<!-- RVD Editor -->
+<div id="tabList_rdtEditor_form_3" class="R3_tabForm rdtFormFix">
+	<div class="R3V3_rdtEditor_tempSection"></div>
+	<!-- RVD Editor Goes Here -->
+</div>
+
+<!-- LIT Editor -->
+<div id="tabList_rdtEditor_form_4" class="R3_tabForm rdtFormFix">
+	<div class="R3V3_rdtEditor_tempSection"></div>
+	<!-- LIT Editor Goes Here -->
+</div>
+
+<!-- PRI Editor -->
+<div id="tabList_rdtEditor_form_5" class="R3_tabForm rdtFormFix">
+	<div class="R3V3_rdtEditor_tempSection"></div>
+	<!-- PRI Editor Goes Here -->
+</div>
+
+<!-- RID Editor -->
+<div id="tabList_rdtEditor_form_6" class="R3_tabForm rdtFormFix">
+	<div class="R3V3_rdtEditor_tempSection"></div>
+	<!-- RID Editor Goes Here -->
+</div>
+
+<!-- BLK Editor -->
+<div id="tabList_rdtEditor_form_7" class="R3_tabForm rdtFormFix">
+	<div class="R3V3_rdtEditor_tempSection"></div>
+	<!-- BLK Editor Goes Here -->
+</div>
+
+<!-- EFF Editor -->
+<div id="tabList_rdtEditor_form_8" class="R3_tabForm rdtFormFix">
+	<div class="R3V3_rdtEditor_tempSection"></div>
+	<!-- EFF Editor Goes Here -->
+</div>
+
+<!-- SCA Editor -->
+<div id="tabList_rdtEditor_form_9" class="R3_tabForm rdtFormFix">
+	<div class="R3V3_rdtEditor_tempSection"></div>
+	<!-- SCA Editor Goes Here -->
+</div>
+
+<!-- EFFSPR Editor -->
+<div id="tabList_rdtEditor_form_10" class="R3_tabForm rdtFormFix">
+	<div class="R3V3_rdtEditor_tempSection"></div>
+	<!-- EFFSPR Editor Goes Here -->
+</div>

@@ -1,0 +1,14 @@
+{
+    "lang": "en",
+    "scope": "/",
+    "short_name": "R3V3",
+    "name": "R3ditor V3",
+    "author": "R3V3 Team",
+    "theme_color": "#000",
+    "display": "minimal-ui",
+    "start_url": "index.htm",
+    "orientation": "landscape",
+    "background_color": "#000",
+    "prefer_related_applications": true,
+    "description": "R3V3 (aka. R3ditor V3) is the third version of the multi-editing tool for classic Resident Evil 3 modding."
+}

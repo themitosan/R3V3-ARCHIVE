@@ -1,0 +1,38 @@
+<!-- CSS -->
+<style type="text/css">
+	.R3V3_MOD_OPTIONS {
+		height: 100%;
+		padding: 6px;
+		background-image: linear-gradient(0deg, #4e4754, #342941);
+	}
+	.R3V3_MOD_text {
+		width: 70%;
+		color: #0f0;
+		border: none;
+		outline: none;
+		border-radius: 4px;
+		font-family: monospace;
+		background-color: #0000;
+		margin: 0px 0px 4px 0px;
+		padding: 4px 8px 4px 8px;
+		background-image: linear-gradient(90deg, black, transparent);
+	}
+</style>
+
+<!-- Mod Settings -->
+<div class="R3V3_MOD_OPTIONS">
+
+	<!-- Name -->
+	Mod Name: <input type="text" placeholder="Please, insert mod name here" id="R3V3_modSettings_name" class="R3V3_MOD_text"><br>
+
+	<!-- Location -->
+	Location: 
+	<input type="button" value="Select location" id="R3V3_modSettings_location" class="R3_BTN_settingsFile position-initial" onclick="R3.system.wip();">
+	<img id="R3V3_modSettings_locationSvg"><br><br>
+
+	<!-- Save -->
+	<div class="align-center">
+		<input type="button" class="R3_BTN_SAVE" value="Save Settings" onclick="R3.mod.saveSettings();">
+	</div>
+
+</div>

@@ -1,0 +1,115 @@
+<!-- Hällò -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Meta -->
+		<meta charset="utf-8"/>
+		<title>R3ditor V3 - Please Wait...</title>
+		<link rel="manifest" href="webPackage.json"/>
+		<link rel="apple-touch-icon" href="img/logo.webp">
+		<link rel="shortcut icon" href="img/logo_ico.ico"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="icon" type="image/webp" href="img/logo.webp"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Theme -->
+		<meta name="theme-color" content="#000"/>
+		<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000"/>
+		<meta name="theme-color" media="(prefers-color-scheme: light)" content="#000"/>
+		<!-- Security Tags -->
+		<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src * 'unsafe-inline'; img-src 'self' data: file:; frame-src *; style-src * 'unsafe-inline';">
+	</head>
+	<body id="APP_BODY">
+		
+		<!-- Splash Screen -->
+		<div class="R3_SPLASH_DIV none" id="R3_SPLASH_DIV">
+			<!-- WIP -->
+		</div>
+
+		<!-- App Holder -->
+		<div id="R3_APP_HOLDER" class="R3_APP_HOLDER">
+
+			<!-- Main Menu -->
+			<div class="R3_MENU_mainMenu" id="R3_MENU_mainMenu">
+
+				<!-- Frame Radial -->
+				<img src="img/FRAME_BG.webp" class="R3V3_mainMenu_frame">
+
+				<!-- Frame Top -->
+				<div class="R3V3_FRAME frameTop"></div>
+
+				<!-- Frame Bottom -->
+				<div class="R3V3_FRAME frameBottom"></div>
+
+				<!-- Main Logo -->
+				<img src="img/logo.webp" class="R3V3_mainAppIcon" id="R3V3_mainAppIcon">
+				
+				<!-- BG -->
+				<div class="R3V3_mainMenu_bg" id="R3V3_mainMenu_bg"></div>
+				
+			</div>
+
+		</div>
+
+		<!-- File Load / Save -->
+		<div class="none">
+			<input type="file" class="none" id="R3_FILE_LOAD_DOM"/>
+			<input type="file" class="none" id="R3_FILE_SAVE_DOM" nwsaveas/>
+			<input type="file" class="none" id="R3_FOLDER_LOAD_DOM" nwdirectory/>
+		</div>
+		<!-- HTML5 Extra -->
+		<div class="none">
+			<input type="color" id="R3_COLOR_PICKER">
+		</div>
+		<!-- Scripts -->
+		<div class="none">
+
+			<!-- Database - The blockquote tag below will be removed while compiling the code -->
+			<blockquote>
+
+				<!-- Plugins -->
+				<script defer type="text/javascript" src="js/external/TMS.js/TMS.js"></script>
+				<script defer type="text/javascript" src="js/external/mousetrap/mousetrap.min.js"></script>
+
+				<!-- Database -->
+				<script defer type="text/javascript" src="js/database/database.js"></script>
+
+				<!-- Design -->
+				<script defer type="text/javascript" src="js/design/progressbar.js"></script>
+				<script defer type="text/javascript" src="js/design/miniwindow.js"></script>
+				<script defer type="text/javascript" src="js/design/shortcuts.js"></script>
+				<script defer type="text/javascript" src="js/design/tabSystem.js"></script>
+				<script defer type="text/javascript" src="js/design/menubar.js"></script>
+				<script defer type="text/javascript" src="js/design/design.js"></script>
+
+				<!-- Modules -->
+				<script defer type="text/javascript" src="js/backupManager.js"></script>
+				<script defer type="text/javascript" src="js/settings.js"></script>
+				<script defer type="text/javascript" src="js/modules.js"></script>
+				<script defer type="text/javascript" src="js/system.js"></script>
+				<script defer type="text/javascript" src="js/tools.js"></script>
+
+				<!-- Main scripts -->
+				<script defer type="text/javascript" src="js/wizard.js"></script>
+				<script defer type="text/javascript" src="js/game.js"></script>
+				<script defer type="text/javascript" src="js/mod.js"></script>
+
+				<!-- INI Editor -->
+				<script defer type="text/javascript" src="js/ini.js"></script>
+
+				<!-- MSG Editor -->
+				<script defer type="text/javascript" src="js/msg/editor.js"></script>
+				<script defer type="text/javascript" src="js/msg/msg.js"></script>
+
+				<!-- RDT Editor -->
+				<script defer type="text/javascript" src="js/rdt/editor.js"></script>
+				<script defer type="text/javascript" src="js/rdt/rdt.js"></script>
+
+				<!-- Boot -->
+				<script defer type="text/javascript" src="js/boot.js"></script>
+
+			</blockquote>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,183 @@
+<!-- CSS -->
+<style type="text/css">
+	.R3V3_msgEditor_mainGUI {
+		height: 100%;
+		position: absolute;
+		width: calc(100% - 133.11px);
+	}
+	.R3V3_msgEditor_textarea {
+		color: #0f0;
+		border: none;
+		padding: 8px;
+		background-color: #0000;
+		width: calc(100% - 16px);
+		height: calc(50% - 16px);
+		background-image: linear-gradient(180deg, #121a50d9, #27377c66);
+	}
+	.R3V3_msgEditor_textPreviewHolder {
+		top: 50%;
+		left: 0px;
+		padding: 6px;
+		position: absolute;
+		width: calc(58% - 12px);
+		height: calc(50% - 54px);
+		background-color: #25252591;
+	}
+	.R3V3_msgEditor_textPreview {
+		overflow: auto;
+    	height: calc(100% - 9px);
+	}
+	.R3V3_msgEditor_hexPreview {
+		top: 50%;
+		left: 58%;
+		padding: 6px;
+		position: absolute;
+		background-color: #0006;
+		width: calc(42% - 12px);
+		height: calc(50% - 54px);
+	}
+	.R3V3_msgEditor_hexCode {
+		color: #0f0;
+		overflow: auto;
+		height: calc(100% - 10px);
+		text-transform: uppercase;
+		-webkit-user-select: all !important;
+	}
+	.R3V3_msgEditor_messageList {
+		width: 94%;
+		color: #fff;
+		overflow: auto;
+		padding: 4px 0px 4px 0px;
+		height: calc(100% - 37px);
+		background-color: #2f3657;
+		border-top-left-radius: 8px;
+		border-top-right-radius: 8px;
+	}
+	.R3V3_msgEditor_messageListHolder {
+		top: 0px;
+		right: 0px;
+		height: 100%;
+		width: 133.11px;
+		position: absolute;
+		text-align: -webkit-center;
+		background-color: #4740708c;
+	}
+	.R3V3_messageList_item {
+		width: 90%;
+		cursor: pointer;
+		border-radius: 3px;
+		margin: 2px 0px 2px 0px;
+		padding: 3px 0px 3px 0px;
+		background-image: linear-gradient(180deg, #5184b9, #35597e);
+	}
+	.R3V3_messageList_itemActive {
+		box-shadow: 0px 0px 6px #0087006e;
+		background-image: linear-gradient(180deg, #0b0, #060);
+	}
+	.R3V3_msgEditor_msgMetadata {
+		left: 0px;
+		bottom: 0px;
+		height: 30px;
+		padding: 6px;
+		overflow: hidden;
+		position: absolute;
+		background-color: #0000;
+		width: calc(100% - 12px);
+		background-image: linear-gradient(0deg, #171717fe, #252525);
+	}
+	.R3V3_msgEditor_textMetadata_1 {
+		left: 122px;
+		position: sticky;
+	}
+	.R3V3_msgEditor_textMetadata_2 {
+		left: 282px;
+		position: sticky !important;
+	}
+	.R3V3_msgEditor_textMetadata_select {
+		top: 6px;
+		width: 50%;
+		left: 194px;
+		position: absolute;
+	}
+</style>
+
+<!-- R3V3 MSG Editor -->
+
+<!-- Icon Bar -->
+<div id="R3V3_msgEditor_iconBar" class="R3V3_iconBar_holder">
+
+	<!-- General -->
+	<input type="button" class="R3V3_iconBar_button iconBar_newFile" id="R3V3_msgEditor_iconBar_newFile" title="Click here to create a new file" onclick="R3.MSG.editor.newFile();">
+	<input type="button" class="R3V3_iconBar_button iconBar_open" id="R3V3_msgEditor_iconBar_open" title="Click here to open" onclick="R3.MSG.editor.open();">
+	<input type="button" class="R3V3_iconBar_button iconBar_openInHex" id="R3V3_msgEditor_iconBar_openInHex" title="Click here to open this file on hex editor" onclick="R3.MSG.editor.openMsgOnHex();">
+	<input type="button" class="R3V3_iconBar_button iconBar_save" id="R3V3_msgEditor_iconBar_save" title="Click here to save this message" onclick="R3.MSG.compileMessage('save');">
+	<input type="button" class="R3V3_iconBar_button iconBar_saveAs" id="R3V3_msgEditor_iconBar_saveAs" title="Click here to save this message as" onclick="R3.MSG.compileMessage('saveAs');">
+
+	<!-- Add / Remove -->
+	<div class="R3V3_iconBar_separator" id="R3V3_msgEditor_addRemove">
+		<input type="button" class="R3V3_iconBar_button iconBar_add" title="Click here to add message" onclick="R3.MSG.editor.addMessage();">
+		<input type="button" class="R3V3_iconBar_button iconBar_remove" title="Click here to remove message" onclick="R3.MSG.editor.removeMessage();">
+	</div>
+
+	<!-- Next / Previous -->
+	<div class="R3V3_iconBar_separator" id="R3V3_msgEditor_nextPrevious">
+		<input type="button" class="R3V3_iconBar_button iconBar_previous" title="Click here to load previous message" onclick="R3.MSG.editor.previousMessage();">
+		<input type="button" class="R3V3_iconBar_button iconBar_next" title="Click here to load next message" onclick="R3.MSG.editor.nextMessage();">
+	</div>
+
+	<!-- Compile -->
+	<input type="button" class="R3V3_iconBar_button iconBar_compile" id="R3V3_msgEditor_compileBtn" title="Click here to compile" onclick="R3.MSG.compileMessage('rdtCompile');">
+
+</div>
+
+<!-- MSG Editor -->
+<div class="R3V3_editorHolder">
+	
+	<!-- Main Interface -->
+	<div class="R3V3_msgEditor_mainGUI" id="R3V3_msgEditor_mainGUI">
+		
+		<!-- Textcode Edit -->
+		<textarea class="R3V3_msgEditor_textarea" id="R3V3_msgEditor_textarea" placeholder="Insert your message here" onmouseup="R3.MSG.editor.processType();" onmousedown="R3.MSG.editor.processType();" onkeyup="R3.MSG.editor.processType(event);" onkeydown="R3.MSG.editor.processType(event);"></textarea>
+		
+		<!-- Message Preview -->
+		<div class="R3V3_msgEditor_textPreviewHolder">
+			Message Preview:<br>
+			<div id="R3V3_msgEditor_textPreview" class="R3V3_msgEditor_textPreview">
+				<!-- Text Preview goes here -->
+			</div>
+		</div>
+	
+		<!-- Hex View -->
+		<div class="R3V3_msgEditor_hexPreview">
+			Hex:<br>
+			<div id="R3V3_msgEditor_hexPreview" class="R3V3_msgEditor_hexCode">
+				<!-- Hex View goes here -->
+			</div>
+		</div>
+
+		<!-- Metadata -->
+		<div class="R3V3_msgEditor_msgMetadata">
+
+			<!-- Message Data -->
+			MSG Hex Length: <font class="R3V3_msgEditor_textMetadata_1" id="R3V3_msgEditor_textMetadata_length">???</font><br>
+			Total functions: <font id="R3V3_msgEditor_textMetadata_totalFunctions" class="R3V3_msgEditor_textMetadata_1">???</font>
+
+			<!-- Text Information -->
+			<div class="R3V3_msgEditor_textMetadata_select">
+				Code length: <font class="R3V3_msgEditor_textMetadata_2" id="R3V3_msgEditor_textCode_length">???</font><br>
+				Text Cursor: <font class="R3V3_msgEditor_textMetadata_2" id="R3V3_msgEditor_textCode_cursor">S: ???? - E: ????</font>
+			</div>
+
+		</div>
+		
+	</div>
+
+	<!-- Message List -->
+	<div class="R3V3_msgEditor_messageListHolder" id="R3V3_msgEditor_messageListHolder">
+		<div class="font-title">Message List</div>
+		<div class="R3V3_msgEditor_messageList" id="R3V3_msgEditor_messageList">
+			<!-- Message list goes here -->
+		</div>
+	</div>
+
+</div>
